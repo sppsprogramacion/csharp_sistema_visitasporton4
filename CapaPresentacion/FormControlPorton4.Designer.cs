@@ -28,11 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gboxDatosParaIngreso = new System.Windows.Forms.GroupBox();
+            this.txtHoraEgreso = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtHoraIngreso = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtFechaIngreso = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtIntrno = new System.Windows.Forms.TextBox();
             this.txtParentesco = new System.Windows.Forms.TextBox();
@@ -54,13 +61,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.picFotoVisita = new System.Windows.Forms.PictureBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblLectorDedo = new System.Windows.Forms.Label();
             this.lblLectorEstado = new System.Windows.Forms.Label();
-            this.picHuella = new System.Windows.Forms.PictureBox();
             this.lblFondoHuella = new System.Windows.Forms.Label();
             this.opMED = new System.Windows.Forms.CheckBox();
             this.opAD = new System.Windows.Forms.CheckBox();
@@ -74,24 +78,15 @@
             this.opMEI = new System.Windows.Forms.CheckBox();
             this.label70 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
+            this.picHuella = new System.Windows.Forms.PictureBox();
+            this.picFotoVisita = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtHoraEgreso = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtHoraIngreso = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtFechaIngreso = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.gboxDatosParaIngreso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMenores)).BeginInit();
             this.gboxVisita.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoVisita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHuella)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoVisita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxDatosParaIngreso
@@ -118,6 +113,89 @@
             this.gboxDatosParaIngreso.Size = new System.Drawing.Size(623, 440);
             this.gboxDatosParaIngreso.TabIndex = 164;
             this.gboxDatosParaIngreso.TabStop = false;
+            // 
+            // txtHoraEgreso
+            // 
+            this.txtHoraEgreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtHoraEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraEgreso.ForeColor = System.Drawing.Color.Black;
+            this.txtHoraEgreso.Location = new System.Drawing.Point(264, 404);
+            this.txtHoraEgreso.Name = "txtHoraEgreso";
+            this.txtHoraEgreso.ReadOnly = true;
+            this.txtHoraEgreso.Size = new System.Drawing.Size(100, 24);
+            this.txtHoraEgreso.TabIndex = 173;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Cyan;
+            this.label10.Location = new System.Drawing.Point(260, 383);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 16);
+            this.label10.TabIndex = 172;
+            this.label10.Text = "Hora egreso";
+            // 
+            // txtHoraIngreso
+            // 
+            this.txtHoraIngreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtHoraIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraIngreso.ForeColor = System.Drawing.Color.Black;
+            this.txtHoraIngreso.Location = new System.Drawing.Point(153, 405);
+            this.txtHoraIngreso.Name = "txtHoraIngreso";
+            this.txtHoraIngreso.ReadOnly = true;
+            this.txtHoraIngreso.Size = new System.Drawing.Size(100, 24);
+            this.txtHoraIngreso.TabIndex = 171;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Cyan;
+            this.label4.Location = new System.Drawing.Point(7, 385);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 16);
+            this.label4.TabIndex = 168;
+            this.label4.Text = "Fecha ingreso";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Cyan;
+            this.label11.Location = new System.Drawing.Point(149, 384);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 16);
+            this.label11.TabIndex = 170;
+            this.label11.Text = "Hora ingreso";
+            // 
+            // txtFechaIngreso
+            // 
+            this.txtFechaIngreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaIngreso.ForeColor = System.Drawing.Color.Black;
+            this.txtFechaIngreso.Location = new System.Drawing.Point(11, 405);
+            this.txtFechaIngreso.Name = "txtFechaIngreso";
+            this.txtFechaIngreso.ReadOnly = true;
+            this.txtFechaIngreso.Size = new System.Drawing.Size(131, 24);
+            this.txtFechaIngreso.TabIndex = 169;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(507, 389);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(105, 40);
+            this.btnCancelar.TabIndex = 162;
+            this.btnCancelar.Text = "FINALIZAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -192,39 +270,42 @@
             // 
             this.dtgMenores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgMenores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgMenores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgMenores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgMenores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgMenores.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgMenores.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtgMenores.EnableHeadersVisualStyles = false;
             this.dtgMenores.Location = new System.Drawing.Point(9, 140);
             this.dtgMenores.Name = "dtgMenores";
             this.dtgMenores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgMenores.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            this.dtgMenores.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgMenores.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgMenores.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dtgMenores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgMenores.Size = new System.Drawing.Size(603, 224);
             this.dtgMenores.TabIndex = 0;
             // 
@@ -398,17 +479,6 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "Fecha nacimiento";
             // 
-            // picFotoVisita
-            // 
-            this.picFotoVisita.BackColor = System.Drawing.Color.Transparent;
-            this.picFotoVisita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picFotoVisita.Location = new System.Drawing.Point(15, 101);
-            this.picFotoVisita.Name = "picFotoVisita";
-            this.picFotoVisita.Size = new System.Drawing.Size(261, 233);
-            this.picFotoVisita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFotoVisita.TabIndex = 19;
-            this.picFotoVisita.TabStop = false;
-            // 
             // txtDni
             // 
             this.txtDni.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -430,20 +500,6 @@
             this.label9.Size = new System.Drawing.Size(37, 19);
             this.label9.TabIndex = 20;
             this.label9.Text = "DNI";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(507, 389);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(105, 40);
-            this.btnCancelar.TabIndex = 162;
-            this.btnCancelar.Text = "FINALIZAR";
-            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // lblLectorDedo
             // 
@@ -468,21 +524,6 @@
             this.lblLectorEstado.Size = new System.Drawing.Size(161, 25);
             this.lblLectorEstado.TabIndex = 167;
             this.lblLectorEstado.Text = "Lector detenido";
-            // 
-            // picHuella
-            // 
-            this.picHuella.BackColor = System.Drawing.Color.Black;
-            this.picHuella.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHuella.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picHuella.Enabled = false;
-            this.picHuella.Image = global::CapaPresentacion.Properties.Resources.huella_scaneo_8;
-            this.picHuella.Location = new System.Drawing.Point(19, 25);
-            this.picHuella.Name = "picHuella";
-            this.picHuella.Size = new System.Drawing.Size(75, 70);
-            this.picHuella.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picHuella.TabIndex = 166;
-            this.picHuella.TabStop = false;
-            this.picHuella.Visible = false;
             // 
             // lblFondoHuella
             // 
@@ -641,6 +682,32 @@
             this.label72.TabIndex = 160;
             this.label72.Text = "MANO IZQUIERDA";
             // 
+            // picHuella
+            // 
+            this.picHuella.BackColor = System.Drawing.Color.Black;
+            this.picHuella.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHuella.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picHuella.Enabled = false;
+            this.picHuella.Image = global::CapaPresentacion.Properties.Resources.huella_scaneo_8;
+            this.picHuella.Location = new System.Drawing.Point(18, 25);
+            this.picHuella.Name = "picHuella";
+            this.picHuella.Size = new System.Drawing.Size(75, 70);
+            this.picHuella.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHuella.TabIndex = 166;
+            this.picHuella.TabStop = false;
+            this.picHuella.Visible = false;
+            // 
+            // picFotoVisita
+            // 
+            this.picFotoVisita.BackColor = System.Drawing.Color.Transparent;
+            this.picFotoVisita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picFotoVisita.Location = new System.Drawing.Point(15, 101);
+            this.picFotoVisita.Name = "picFotoVisita";
+            this.picFotoVisita.Size = new System.Drawing.Size(261, 233);
+            this.picFotoVisita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFotoVisita.TabIndex = 19;
+            this.picFotoVisita.TabStop = false;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.manos_lila;
@@ -651,125 +718,6 @@
             this.pictureBox4.TabIndex = 159;
             this.pictureBox4.TabStop = false;
             // 
-            // txtHoraEgreso
-            // 
-            this.txtHoraEgreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtHoraEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraEgreso.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtHoraEgreso.Location = new System.Drawing.Point(264, 405);
-            this.txtHoraEgreso.Name = "txtHoraEgreso";
-            this.txtHoraEgreso.ReadOnly = true;
-            this.txtHoraEgreso.Size = new System.Drawing.Size(100, 22);
-            this.txtHoraEgreso.TabIndex = 173;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Cyan;
-            this.label10.Location = new System.Drawing.Point(260, 387);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 16);
-            this.label10.TabIndex = 172;
-            this.label10.Text = "Hora egreso";
-            // 
-            // txtHoraIngreso
-            // 
-            this.txtHoraIngreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtHoraIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraIngreso.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtHoraIngreso.Location = new System.Drawing.Point(153, 406);
-            this.txtHoraIngreso.Name = "txtHoraIngreso";
-            this.txtHoraIngreso.ReadOnly = true;
-            this.txtHoraIngreso.Size = new System.Drawing.Size(100, 22);
-            this.txtHoraIngreso.TabIndex = 171;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Cyan;
-            this.label4.Location = new System.Drawing.Point(7, 389);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 16);
-            this.label4.TabIndex = 168;
-            this.label4.Text = "Fecha ingreso";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Cyan;
-            this.label11.Location = new System.Drawing.Point(149, 388);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 16);
-            this.label11.TabIndex = 170;
-            this.label11.Text = "Hora ingreso";
-            // 
-            // txtFechaIngreso
-            // 
-            this.txtFechaIngreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaIngreso.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtFechaIngreso.Location = new System.Drawing.Point(11, 406);
-            this.txtFechaIngreso.Name = "txtFechaIngreso";
-            this.txtFechaIngreso.ReadOnly = true;
-            this.txtFechaIngreso.Size = new System.Drawing.Size(131, 22);
-            this.txtFechaIngreso.TabIndex = 169;
-            // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.Black;
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Cyan;
-            this.label19.Location = new System.Drawing.Point(18, 25);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 70);
-            this.label19.TabIndex = 165;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.huella_scaneo_8;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 166;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Cyan;
-            this.label20.Location = new System.Drawing.Point(98, 30);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(161, 25);
-            this.label20.TabIndex = 167;
-            this.label20.Text = "Lector detenido";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label21.Location = new System.Drawing.Point(98, 67);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(101, 24);
-            this.label21.TabIndex = 168;
-            this.label21.Text = "Detenido...";
-            // 
             // FormControlPorton4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -777,19 +725,15 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1144, 591);
             this.Controls.Add(this.opMED);
-            this.Controls.Add(this.label21);
             this.Controls.Add(this.opAD);
             this.Controls.Add(this.lblLectorDedo);
             this.Controls.Add(this.opMAD);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.opID);
             this.Controls.Add(this.lblLectorEstado);
             this.Controls.Add(this.opPD);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.opPI);
             this.Controls.Add(this.picHuella);
             this.Controls.Add(this.opII);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.opMAI);
             this.Controls.Add(this.lblFondoHuella);
             this.Controls.Add(this.opAI);
@@ -800,6 +744,7 @@
             this.Controls.Add(this.label72);
             this.Controls.Add(this.pictureBox4);
             this.Name = "FormControlPorton4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONTROL PORTON Nº 4";
             this.Load += new System.EventHandler(this.FormControlPorton4_Load);
             this.gboxDatosParaIngreso.ResumeLayout(false);
@@ -807,10 +752,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgMenores)).EndInit();
             this.gboxVisita.ResumeLayout(false);
             this.gboxVisita.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoVisita)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHuella)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoVisita)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -867,9 +811,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtFechaIngreso;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
     }
 }

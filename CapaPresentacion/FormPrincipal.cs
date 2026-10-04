@@ -105,5 +105,12 @@ namespace CapaPresentacion
 
             formReimprimirFicha.ShowDialog();
         }
+
+        private void btnControlAcceso_Click(object sender, EventArgs e)
+        {
+            FormControlPorton4 formControl = new FormControlPorton4();
+
+            formControl.ShowDialog();
+        }
     }
 }

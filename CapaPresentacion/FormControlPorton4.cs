@@ -46,8 +46,235 @@ namespace CapaPresentacion
             //habilitar lector
             fingerprintCapture.Start();
             modoIdentificacion = true;
+            picHuella.Visible = true;
+            lblLectorEstado.Text = "Coloque el dedo para verificar.";
+            lblLectorDedo.Text = "Esperando huella...";
 
         }
+
+        //CONTROL EDAD
+        private void ControlEdad(int edad)
+        {
+            if (edad < 18)
+            {
+                lblCategoriaEdad.Text = "Edad: " + edad + " años. Es MENOR.";
+            }
+            else
+            {
+                lblCategoriaEdad.Text = "Edad: " + edad + " años. Es ADULTO.";
+            }
+        }
+        //FIN CONTROL EDAD
+        //-------------------------------------------------------------------------------------
+
+        //CONTROL TIENE DISCAPACIDAD
+        private void ControlTieneDiscapacidad(bool tieneDiscapacidad, string detalle)
+        {
+            if (tieneDiscapacidad)
+            {
+                lblDiscapacidad.Text = "TIENE DISCAPACIDAD. " + detalle;
+            }
+            else
+            {
+                lblDiscapacidad.Text = "NO TIENE DISCAPACIDAD";
+            }
+        }
+        //FIN CONTROL TIENE DISCAPACIDAD
+        //------------------------------------------------------------------------------------------
+
+        //BLOQUEAR DEDOS SEGUN HUELLA CARGADA
+        private void bloquearChecksHuellasCargadas(List<DHuella> listaHuellas)
+        {
+
+            if (listaHuellas.Count == 0)
+            {
+                MessageBox.Show("El ciudadano no posee huellas registradas.", "Sistema Visistas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            foreach (DHuella huella in listaHuellas)
+            {
+                int dedo = Convert.ToInt32(huella.dedo_id);
+                //MessageBox.Show (dedo);
+                switch (dedo)
+                {
+                    case 1:
+                        opPD.BackColor = Color.Green;
+                        break;
+
+                    case 2:
+
+                        opID.BackColor = Color.Green;
+                        break;
+
+                    case 3:
+
+                        opMAD.BackColor = Color.Green;
+                        break;
+
+                    case 4:
+
+                        opAD.BackColor = Color.Green;
+                        break;
+
+                    case 5:
+
+                        opMED.BackColor = Color.Green;
+                        break;
+
+                    case 6:
+
+                        opPI.BackColor = Color.Green;
+                        break;
+
+                    case 7:
+
+                        opII.BackColor = Color.Green;
+                        break;
+
+                    case 8:
+
+                        opMAI.BackColor = Color.Green;
+                        break;
+
+                    case 9:
+
+                        opAI.BackColor = Color.Green;
+                        break;
+
+                    case 10:
+
+                        opMEI.BackColor = Color.Green;
+                        break;
+
+                    default:
+                        break;
+
+
+                }//fin switch
+            }//fin foreach
+        }
+        //FIN PRocedimiento para bloquear dedos segun huella cargada
+        //-------------------------------------------------------------------------------
+
+        //BLOQUEAR DEDOS SEGUN HUELLA CARGADA
+        //----------------------------------------------------------------------------------------
+
+        //INICIALIZAR CONTROLES
+        private void InicializarContrles()
+        {
+            //DATOS DEL CIUDADANO
+            lblApellidoNombre.Text = "Apellido y nombre"; ;
+            picFotoVisita.Image = null;
+            txtDni.Text = string.Empty; ;
+            txtSexo.Text = string.Empty; ;
+            txtFechaNacimiento.Text = string.Empty; ;
+            txtEdad.Text = string.Empty; ;
+
+            lblCategoriaEdad.Text = "Categoria - edad";
+            lblDiscapacidad.Text = "Discapacidad";
+
+            //DATOS DE INGRESO
+            txtNumeroFicha.Text = string.Empty;
+            txtIdIngreso.Text = string.Empty;
+
+            txtFechaIngreso.Text = string.Empty;
+            txtHoraIngreso.Text = string.Empty;
+
+            txtIntrno.Text = string.Empty;
+            txtParentesco.Text = string.Empty;
+
+            opPD.BackColor = Color.White;
+            opID.BackColor = Color.White;
+            opMAD.BackColor = Color.White;
+            opAD.BackColor = Color.White;
+            opMED.BackColor = Color.White;
+            opPI.BackColor = Color.White;
+            opII.BackColor = Color.White;
+            opMAI.BackColor = Color.White;
+            opAI.BackColor = Color.White;
+            opMEI.BackColor = Color.White;
+
+            dtgMenores.DataSource = null;
+        }
+        //FINALIZAR INICIALIZAR CONTROLES
+        //----------------------------------------------------------------------------
+
+
+        //BUSCAR Y CARGAR DATOS DE ENTRADA
+        private async void CargarEntrada(int idCiudadano)
+        {
+             EjecutarEnUI(async () =>
+            {
+                this.Enabled = false;
+                NEntradaSalida nEntradaSalida = new NEntradaSalida();
+                (DEntradaSalidaControl dCiudadanoIngresoResponse, string errorResponse) = await nEntradaSalida.BuscarEntradaControlXCiudadano(idCiudadano);
+                this.Enabled = true;
+
+
+                if (dCiudadanoIngresoResponse == null)
+                {
+                    MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Buscando identidad de la visita", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    FormHuellasEncontrado formhuellasencontrado = new FormHuellasEncontrado(idCiudadano);
+                    formhuellasencontrado.ShowDialog();
+                    return;
+                }
+
+                //CARGAR DATOS DEL CIUDADANO
+                lblApellidoNombre.Text = dCiudadanoIngresoResponse.nombre_visita;
+                picFotoVisita.Load(dCiudadanoIngresoResponse.foto_visita);
+                txtDni.Text = dCiudadanoIngresoResponse.dni_visita.ToString();
+                txtSexo.Text = dCiudadanoIngresoResponse.sexo_visita;
+                txtFechaNacimiento.Text = dCiudadanoIngresoResponse.fecha_nacimiento_visita.ToShortDateString();
+                txtEdad.Text = dCiudadanoIngresoResponse.edad_visita.ToString();
+
+                //CARGAR DATOS DE INGRESO
+                txtNumeroFicha.Text = dCiudadanoIngresoResponse.numero_ficha.ToString();
+                txtIdIngreso.Text = dCiudadanoIngresoResponse.id_entrada_salida.ToString();
+                txtNumeroFicha.Text = dCiudadanoIngresoResponse.numero_ficha.ToString();
+                txtParentesco.Text = dCiudadanoIngresoResponse.parentesco;
+                txtIntrno.Text = dCiudadanoIngresoResponse.nombre_interno;
+                txtFechaIngreso.Text = dCiudadanoIngresoResponse.fecha_registro.ToShortDateString();
+                txtHoraIngreso.Text = dCiudadanoIngresoResponse.hora_registro;
+
+
+
+                this.ControlTieneDiscapacidad(dCiudadanoIngresoResponse.tiene_discapacidad, dCiudadanoIngresoResponse.discapacidad_detalle);
+                this.ControlEdad(dCiudadanoIngresoResponse.edad_visita);
+
+                //Cargar Huellas
+                this.bloquearChecksHuellasCargadas(dCiudadanoIngresoResponse.huellasCiudadanoResponse);
+
+                //Cargar menores
+                var datosfiltradosMenores = dCiudadanoIngresoResponse.menoresIngresadosResponse
+                    .Select(c => new
+                    {
+                        Id = c.id_ciudadano,
+                        ApellidoNombre = c.nombre_menor,
+                        Dni = c.dni,
+                        Sexo = c.sexo,
+                        Edad = c.edad,
+                    })
+                    .ToList();
+                dtgMenores.DataSource = datosfiltradosMenores;
+
+
+                //dimensionar columnas
+                if (dCiudadanoIngresoResponse.menoresIngresadosResponse.Count > 0)
+                {                    
+                    dtgMenores.Columns["Id"].Width = 40;
+                    dtgMenores.Columns["ApellidoNombre"].Width = 300;
+                    dtgMenores.Columns["Dni"].Width = 80;
+                    dtgMenores.Columns["Sexo"].Width = 80;
+                    dtgMenores.Columns["Edad"].Width = 50;
+                }
+            });
+        }
+        //FIN BUSCAR Y CARGAR DATOS DE ENTRADA
+        //--------------------------------------------------------------------------------
 
 
         //------------------------------------------------------
@@ -242,9 +469,9 @@ namespace CapaPresentacion
                             if (fingerprintVerifier.Verify(featureSet, template))
                             {
                                 MessageBox.Show($"COINCIDENCIA ENCONCTRADA CON ESTA HUELLA", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                                FormHuellasEncontrado formHuellasEncontrado = new FormHuellasEncontrado(huella.ciudadano_id);
-                                formHuellasEncontrado.ShowDialog();
+                                this.CargarEntrada(huella.ciudadano_id);
+                                //FormHuellasEncontrado formHuellasEncontrado = new FormHuellasEncontrado(huella.ciudadano_id);
+                                //formHuellasEncontrado.ShowDialog();
                                 return;
                             }
                         }

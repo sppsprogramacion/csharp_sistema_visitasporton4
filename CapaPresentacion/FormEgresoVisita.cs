@@ -46,10 +46,10 @@ namespace CapaPresentacion
                 MessageBox.Show("Debe ingresar un numero de ficha valido", "Sistema Sisitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            this.Enabled = false;
 
+            this.Enabled = false;
             NEntradaSalida nEntradaSalida = new NEntradaSalida();
-            (DEntradaSalidaControl dCiudadanoIngresoResponse, string errorResponse) = await nEntradaSalida.BuscarCiudadanoIngresoControlXFicha(numeroFicha);
+            (DEntradaSalidaControl dCiudadanoIngresoResponse, string errorResponse) = await nEntradaSalida.BuscarEntradaControlXFicha(numeroFicha);
             this.Enabled = true;
 
 

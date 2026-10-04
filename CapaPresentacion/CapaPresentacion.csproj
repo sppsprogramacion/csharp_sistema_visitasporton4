@@ -65,7 +65,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo-sistema-visitas.ico</ApplicationIcon>
+    <ApplicationIcon>logo-control-acceso-final.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -408,9 +408,12 @@
     <None Include="Resources\manos_lila.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\login-sistema-visitas.png" />
+    <Content Include="logo-control-acceso-final.ico" />
     <Content Include="logo-sistema-visitas.ico" />
     <None Include="Resources\huella_scaneo_8.png" />
     <None Include="Resources\huella2.jpg" />
+    <None Include="Resources\logo-escudo-candado-final.png" />
+    <None Include="Resources\logo-escudo-candado2.png" />
     <Content Include="restriccion- icono.ico" />
     <Content Include="restriccion-icono.ico" />
     <Content Include="SqlServerTypes\readme.htm" />

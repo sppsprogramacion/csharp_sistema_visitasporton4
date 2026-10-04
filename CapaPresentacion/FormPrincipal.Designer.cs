@@ -33,10 +33,11 @@
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.btnCerrarSistema = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnIngresoVisita = new System.Windows.Forms.Button();
             this.btnEgresoVisitas = new System.Windows.Forms.Button();
             this.btnReimprimirFicha = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnControlAcceso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,14 +58,14 @@
             // 
             // lblEncabezado
             // 
-            this.lblEncabezado.BackColor = System.Drawing.Color.SteelBlue;
-            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEncabezado.ForeColor = System.Drawing.Color.White;
-            this.lblEncabezado.Location = new System.Drawing.Point(1, 1);
+            this.lblEncabezado.BackColor = System.Drawing.Color.Black;
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.ForeColor = System.Drawing.Color.Cyan;
+            this.lblEncabezado.Location = new System.Drawing.Point(1, 5);
             this.lblEncabezado.Name = "lblEncabezado";
             this.lblEncabezado.Size = new System.Drawing.Size(903, 29);
             this.lblEncabezado.TabIndex = 76;
-            this.lblEncabezado.Text = "SISTEMA DE VISITAS";
+            this.lblEncabezado.Text = "SISTEMA DE VISITAS - CONTROL PORTON N° 4";
             this.lblEncabezado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCerrarSistema
@@ -86,22 +87,12 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.ForeColor = System.Drawing.Color.Cyan;
             this.lblUsuario.Location = new System.Drawing.Point(40, 574);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(50, 16);
             this.lblUsuario.TabIndex = 78;
             this.lblUsuario.Text = "label1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.usuario;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 569);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 77;
-            this.pictureBox1.TabStop = false;
             // 
             // btnIngresoVisita
             // 
@@ -148,12 +139,38 @@
             this.btnReimprimirFicha.UseVisualStyleBackColor = false;
             this.btnReimprimirFicha.Click += new System.EventHandler(this.btnReimprimirFicha_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.usuario;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 569);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 77;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnControlAcceso
+            // 
+            this.btnControlAcceso.BackColor = System.Drawing.Color.Indigo;
+            this.btnControlAcceso.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
+            this.btnControlAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnControlAcceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnControlAcceso.ForeColor = System.Drawing.Color.White;
+            this.btnControlAcceso.Location = new System.Drawing.Point(23, 142);
+            this.btnControlAcceso.Name = "btnControlAcceso";
+            this.btnControlAcceso.Size = new System.Drawing.Size(120, 70);
+            this.btnControlAcceso.TabIndex = 83;
+            this.btnControlAcceso.Text = "Control Porton N° 4";
+            this.btnControlAcceso.UseVisualStyleBackColor = false;
+            this.btnControlAcceso.Click += new System.EventHandler(this.btnControlAcceso_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(103)))), ((int)(((byte)(153)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(916, 606);
+            this.Controls.Add(this.btnControlAcceso);
             this.Controls.Add(this.btnReimprimirFicha);
             this.Controls.Add(this.btnEgresoVisitas);
             this.Controls.Add(this.btnIngresoVisita);
@@ -184,6 +201,7 @@
         private System.Windows.Forms.Button btnIngresoVisita;
         private System.Windows.Forms.Button btnEgresoVisitas;
         private System.Windows.Forms.Button btnReimprimirFicha;
+        private System.Windows.Forms.Button btnControlAcceso;
     }
 }
 
