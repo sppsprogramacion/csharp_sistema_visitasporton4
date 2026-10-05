@@ -215,8 +215,8 @@ namespace CapaPresentacion
 
                 if (dCiudadanoIngresoResponse == null)
                 {
-                    MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    MessageBox.Show("Buscando identidad de la visita", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show("Buscando identidad de la visita", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     FormHuellasEncontrado formhuellasencontrado = new FormHuellasEncontrado(idCiudadano);
                     formhuellasencontrado.ShowDialog();
@@ -468,7 +468,7 @@ namespace CapaPresentacion
 
                             if (fingerprintVerifier.Verify(featureSet, template))
                             {
-                                MessageBox.Show($"COINCIDENCIA ENCONCTRADA CON ESTA HUELLA", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                //MessageBox.Show($"COINCIDENCIA ENCONCTRADA CON ESTA HUELLA", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 this.CargarEntrada(huella.ciudadano_id);
                                 //FormHuellasEncontrado formHuellasEncontrado = new FormHuellasEncontrado(huella.ciudadano_id);
                                 //formHuellasEncontrado.ShowDialog();

@@ -230,6 +230,12 @@
     <Compile Include="FormHistorialProhibicion.Designer.cs">
       <DependentUpon>FormHistorialProhibicion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHuellaNoEncontrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHuellaNoEncontrada.Designer.cs">
+      <DependentUpon>FormHuellaNoEncontrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHuellasEncontrado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHistorialProhibicion.resx">
       <DependentUpon>FormHistorialProhibicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHuellaNoEncontrada.resx">
+      <DependentUpon>FormHuellaNoEncontrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHuellasEncontrado.resx">
       <DependentUpon>FormHuellasEncontrado.cs</DependentUpon>

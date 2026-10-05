@@ -36,10 +36,11 @@ namespace CapaPresentacion
 
             if (dCiudadano == null)
             {
-                MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(errorResponse, "Sistema Control Porton N° 4", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            lblMensaje.Text = "No hay una ingreso registrado de este ciudadano.\n Controle nuevamente o siga las directivas especificadas para este caso.";
             txtIdCiudadano.Text = dCiudadano.id_ciudadano.ToString();
             txtApellidoCivil.Text = dCiudadano.apellido.ToString();
             txtNombreCivil.Text = dCiudadano.nombre.ToString();
