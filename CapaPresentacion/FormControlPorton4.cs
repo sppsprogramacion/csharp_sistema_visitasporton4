@@ -482,8 +482,15 @@ namespace CapaPresentacion
                         }
                     }
 
-                    MessageBox.Show("NO SE ENCONTRO COINCIDENCIA DE ESTA HUELLA", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show("NO SE ENCONTRO COINCIDENCIA DE ESTA HUELLA", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //Cuando no se enocntro la huella
+                    EjecutarEnUI(() =>
+                    {
+                        FormHuellaNoEncontrada formHuellaNoEncontrado = new FormHuellaNoEncontrada();
+                        formHuellaNoEncontrado.ShowDialog();
+                        
 
+                    });
                     return;
 
                 }

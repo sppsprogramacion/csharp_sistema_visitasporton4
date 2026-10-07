@@ -423,6 +423,7 @@
     <None Include="Resources\huella2.jpg" />
     <None Include="Resources\logo-escudo-candado-final.png" />
     <None Include="Resources\logo-escudo-candado2.png" />
+    <None Include="Resources\logo_advertencia.png" />
     <Content Include="restriccion- icono.ico" />
     <Content Include="restriccion-icono.ico" />
     <Content Include="SqlServerTypes\readme.htm" />

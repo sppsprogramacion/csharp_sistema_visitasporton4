@@ -16,5 +16,16 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void FormHuellaNoEncontrada_Load(object sender, EventArgs e)
+        {
+            lblMensaje.Text = "NO SE ENCONTRO UN CIUDADANO REGISTRADO CON ESTA HUELLA.\n\n"
+                +"Controle nuevamente o siga las directivas especificadas para este caso.";
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

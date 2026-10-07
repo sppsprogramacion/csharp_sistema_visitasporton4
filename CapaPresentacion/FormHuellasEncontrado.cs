@@ -40,7 +40,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            lblMensaje.Text = "No hay una ingreso registrado de este ciudadano.\n Controle nuevamente o siga las directivas especificadas para este caso.";
+            lblMensaje.Text = "No hay una ingreso registrado de este ciudadano.\nControle nuevamente o siga las directivas especificadas para este caso.";
             txtIdCiudadano.Text = dCiudadano.id_ciudadano.ToString();
             txtApellidoCivil.Text = dCiudadano.apellido.ToString();
             txtNombreCivil.Text = dCiudadano.nombre.ToString();
@@ -49,6 +49,11 @@ namespace CapaPresentacion
             txtFechaNacimiento.Text = dCiudadano.fecha_nac.ToShortDateString();
             txtFechaAlta.Text = dCiudadano.fecha_alta.ToShortDateString();
             picFotoVisita.Load(dCiudadano.foto);
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
