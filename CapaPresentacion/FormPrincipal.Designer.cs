@@ -35,9 +35,9 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnIngresoVisita = new System.Windows.Forms.Button();
             this.btnEgresoVisitas = new System.Windows.Forms.Button();
-            this.btnReimprimirFicha = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnControlAcceso = new System.Windows.Forms.Button();
+            this.btnVerIngresos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.btnVerVisitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerVisitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerVisitas.ForeColor = System.Drawing.Color.White;
-            this.btnVerVisitas.Location = new System.Drawing.Point(416, 56);
+            this.btnVerVisitas.Location = new System.Drawing.Point(299, 56);
             this.btnVerVisitas.Name = "btnVerVisitas";
             this.btnVerVisitas.Size = new System.Drawing.Size(120, 70);
             this.btnVerVisitas.TabIndex = 0;
@@ -101,7 +101,7 @@
             this.btnIngresoVisita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresoVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresoVisita.ForeColor = System.Drawing.Color.White;
-            this.btnIngresoVisita.Location = new System.Drawing.Point(23, 56);
+            this.btnIngresoVisita.Location = new System.Drawing.Point(12, 375);
             this.btnIngresoVisita.Name = "btnIngresoVisita";
             this.btnIngresoVisita.Size = new System.Drawing.Size(120, 70);
             this.btnIngresoVisita.TabIndex = 80;
@@ -116,28 +116,13 @@
             this.btnEgresoVisitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEgresoVisitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEgresoVisitas.ForeColor = System.Drawing.Color.White;
-            this.btnEgresoVisitas.Location = new System.Drawing.Point(155, 56);
+            this.btnEgresoVisitas.Location = new System.Drawing.Point(138, 375);
             this.btnEgresoVisitas.Name = "btnEgresoVisitas";
             this.btnEgresoVisitas.Size = new System.Drawing.Size(120, 70);
             this.btnEgresoVisitas.TabIndex = 81;
             this.btnEgresoVisitas.Text = "Egreso de visitas";
             this.btnEgresoVisitas.UseVisualStyleBackColor = false;
             this.btnEgresoVisitas.Click += new System.EventHandler(this.btnEgresoVisitas_Click);
-            // 
-            // btnReimprimirFicha
-            // 
-            this.btnReimprimirFicha.BackColor = System.Drawing.Color.Indigo;
-            this.btnReimprimirFicha.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
-            this.btnReimprimirFicha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReimprimirFicha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReimprimirFicha.ForeColor = System.Drawing.Color.White;
-            this.btnReimprimirFicha.Location = new System.Drawing.Point(286, 56);
-            this.btnReimprimirFicha.Name = "btnReimprimirFicha";
-            this.btnReimprimirFicha.Size = new System.Drawing.Size(120, 70);
-            this.btnReimprimirFicha.TabIndex = 82;
-            this.btnReimprimirFicha.Text = "Reimprimir ficha";
-            this.btnReimprimirFicha.UseVisualStyleBackColor = false;
-            this.btnReimprimirFicha.Click += new System.EventHandler(this.btnReimprimirFicha_Click);
             // 
             // pictureBox1
             // 
@@ -156,7 +141,7 @@
             this.btnControlAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnControlAcceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnControlAcceso.ForeColor = System.Drawing.Color.White;
-            this.btnControlAcceso.Location = new System.Drawing.Point(23, 142);
+            this.btnControlAcceso.Location = new System.Drawing.Point(23, 56);
             this.btnControlAcceso.Name = "btnControlAcceso";
             this.btnControlAcceso.Size = new System.Drawing.Size(120, 70);
             this.btnControlAcceso.TabIndex = 83;
@@ -164,14 +149,29 @@
             this.btnControlAcceso.UseVisualStyleBackColor = false;
             this.btnControlAcceso.Click += new System.EventHandler(this.btnControlAcceso_Click);
             // 
+            // btnVerIngresos
+            // 
+            this.btnVerIngresos.BackColor = System.Drawing.Color.Indigo;
+            this.btnVerIngresos.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
+            this.btnVerIngresos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerIngresos.ForeColor = System.Drawing.Color.White;
+            this.btnVerIngresos.Location = new System.Drawing.Point(158, 56);
+            this.btnVerIngresos.Name = "btnVerIngresos";
+            this.btnVerIngresos.Size = new System.Drawing.Size(120, 70);
+            this.btnVerIngresos.TabIndex = 84;
+            this.btnVerIngresos.Text = "Ver ingresos";
+            this.btnVerIngresos.UseVisualStyleBackColor = false;
+            this.btnVerIngresos.Click += new System.EventHandler(this.btnVerIngresos_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(916, 606);
+            this.Controls.Add(this.btnVerIngresos);
             this.Controls.Add(this.btnControlAcceso);
-            this.Controls.Add(this.btnReimprimirFicha);
             this.Controls.Add(this.btnEgresoVisitas);
             this.Controls.Add(this.btnIngresoVisita);
             this.Controls.Add(this.lblUsuario);
@@ -200,8 +200,8 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnIngresoVisita;
         private System.Windows.Forms.Button btnEgresoVisitas;
-        private System.Windows.Forms.Button btnReimprimirFicha;
         private System.Windows.Forms.Button btnControlAcceso;
+        private System.Windows.Forms.Button btnVerIngresos;
     }
 }
 

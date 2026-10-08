@@ -181,7 +181,7 @@ namespace DAOImplement
                 // Agregar el token en los headers
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/entradas-salidas/buscar-entrada-control-ciudadano/" + idCiudadano);
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/entradas-salidas/buscar-entrada-control-porton4-xciudadano/" + idCiudadano);
 
                 if (httpResponse.IsSuccessStatusCode)
                 {

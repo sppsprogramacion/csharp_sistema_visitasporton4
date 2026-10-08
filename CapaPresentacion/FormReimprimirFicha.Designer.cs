@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgIngresos = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gboxVisita = new System.Windows.Forms.GroupBox();
@@ -70,7 +70,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnReimprimirFicha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgIngresos)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.gboxVisita.SuspendLayout();
@@ -82,43 +81,43 @@
             // 
             this.dtgIngresos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgIngresos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgIngresos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgIngresos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dtgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgIngresos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgIngresos.DefaultCellStyle = dataGridViewCellStyle10;
             this.dtgIngresos.EnableHeadersVisualStyles = false;
             this.dtgIngresos.GridColor = System.Drawing.Color.White;
             this.dtgIngresos.Location = new System.Drawing.Point(7, 20);
             this.dtgIngresos.MultiSelect = false;
             this.dtgIngresos.Name = "dtgIngresos";
             this.dtgIngresos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgIngresos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dtgIngresos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgIngresos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgIngresos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dtgIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgIngresos.Size = new System.Drawing.Size(1079, 382);
             this.dtgIngresos.TabIndex = 2;
@@ -375,7 +374,7 @@
             this.gboxDatosParaIngreso.ForeColor = System.Drawing.Color.White;
             this.gboxDatosParaIngreso.Location = new System.Drawing.Point(510, 3);
             this.gboxDatosParaIngreso.Name = "gboxDatosParaIngreso";
-            this.gboxDatosParaIngreso.Size = new System.Drawing.Size(611, 225);
+            this.gboxDatosParaIngreso.Size = new System.Drawing.Size(611, 262);
             this.gboxDatosParaIngreso.TabIndex = 159;
             this.gboxDatosParaIngreso.TabStop = false;
             // 
@@ -383,7 +382,7 @@
             // 
             this.txtHoraEgreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtHoraEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraEgreso.Location = new System.Drawing.Point(228, 194);
+            this.txtHoraEgreso.Location = new System.Drawing.Point(228, 213);
             this.txtHoraEgreso.Name = "txtHoraEgreso";
             this.txtHoraEgreso.ReadOnly = true;
             this.txtHoraEgreso.Size = new System.Drawing.Size(100, 20);
@@ -395,7 +394,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(224, 176);
+            this.label10.Location = new System.Drawing.Point(224, 195);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(94, 16);
             this.label10.TabIndex = 166;
@@ -428,7 +427,7 @@
             // 
             this.txtHoraIngreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtHoraIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraIngreso.Location = new System.Drawing.Point(120, 195);
+            this.txtHoraIngreso.Location = new System.Drawing.Point(120, 214);
             this.txtHoraIngreso.Name = "txtHoraIngreso";
             this.txtHoraIngreso.ReadOnly = true;
             this.txtHoraIngreso.Size = new System.Drawing.Size(100, 20);
@@ -440,7 +439,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 178);
+            this.label4.Location = new System.Drawing.Point(6, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 16);
             this.label4.TabIndex = 158;
@@ -450,7 +449,7 @@
             // 
             this.txtOrganismo.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtOrganismo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganismo.Location = new System.Drawing.Point(335, 193);
+            this.txtOrganismo.Location = new System.Drawing.Point(335, 212);
             this.txtOrganismo.Name = "txtOrganismo";
             this.txtOrganismo.ReadOnly = true;
             this.txtOrganismo.Size = new System.Drawing.Size(270, 20);
@@ -462,7 +461,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(116, 177);
+            this.label11.Location = new System.Drawing.Point(116, 196);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 16);
             this.label11.TabIndex = 160;
@@ -472,7 +471,7 @@
             // 
             this.txtFechaIngreso.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaIngreso.Location = new System.Drawing.Point(10, 195);
+            this.txtFechaIngreso.Location = new System.Drawing.Point(10, 214);
             this.txtFechaIngreso.Name = "txtFechaIngreso";
             this.txtFechaIngreso.ReadOnly = true;
             this.txtFechaIngreso.Size = new System.Drawing.Size(102, 20);
@@ -484,7 +483,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(331, 176);
+            this.label6.Location = new System.Drawing.Point(331, 195);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 16);
             this.label6.TabIndex = 162;
@@ -570,34 +569,18 @@
             this.label12.TabIndex = 147;
             this.label12.Text = "Menores ";
             // 
-            // btnReimprimirFicha
-            // 
-            this.btnReimprimirFicha.BackColor = System.Drawing.Color.Green;
-            this.btnReimprimirFicha.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnReimprimirFicha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReimprimirFicha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReimprimirFicha.ForeColor = System.Drawing.Color.White;
-            this.btnReimprimirFicha.Location = new System.Drawing.Point(820, 230);
-            this.btnReimprimirFicha.Name = "btnReimprimirFicha";
-            this.btnReimprimirFicha.Size = new System.Drawing.Size(302, 35);
-            this.btnReimprimirFicha.TabIndex = 160;
-            this.btnReimprimirFicha.Text = "REIMPRIMIR FICHA";
-            this.btnReimprimirFicha.UseVisualStyleBackColor = false;
-            this.btnReimprimirFicha.Click += new System.EventHandler(this.btnReimprimirFicha_Click);
-            // 
             // FormReimprimirFicha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(103)))), ((int)(((byte)(153)))));
             this.ClientSize = new System.Drawing.Size(1134, 691);
-            this.Controls.Add(this.btnReimprimirFicha);
             this.Controls.Add(this.gboxDatosParaIngreso);
             this.Controls.Add(this.gboxVisita);
             this.Controls.Add(this.groupBox3);
             this.Name = "FormReimprimirFicha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "REIMPRIMIR FICHA";
+            this.Text = "INGRESOS DEL DIA";
             this.Load += new System.EventHandler(this.FormReimprimirFicha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgIngresos)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -647,7 +630,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtCasillero;
-        private System.Windows.Forms.Button btnReimprimirFicha;
         private System.Windows.Forms.TextBox txtHoraEgreso;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox chkAdulto;

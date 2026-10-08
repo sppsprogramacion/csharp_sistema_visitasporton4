@@ -52,6 +52,11 @@ namespace CapaPresentacion
 
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.InicializarContrles();
+        }
+
         //CONTROL EDAD
         private void ControlEdad(int edad)
         {
@@ -239,7 +244,7 @@ namespace CapaPresentacion
                 txtIntrno.Text = dCiudadanoIngresoResponse.nombre_interno;
                 txtFechaIngreso.Text = dCiudadanoIngresoResponse.fecha_registro.ToShortDateString();
                 txtHoraIngreso.Text = dCiudadanoIngresoResponse.hora_registro;
-
+                txtHoraEgreso.Text = dCiudadanoIngresoResponse.hora_egreso;
 
 
                 this.ControlTieneDiscapacidad(dCiudadanoIngresoResponse.tiene_discapacidad, dCiudadanoIngresoResponse.discapacidad_detalle);
@@ -576,6 +581,7 @@ namespace CapaPresentacion
         {
 
         }
+        
 
         #endregion Metodos para huellas
         //----------------------------------------------------------
