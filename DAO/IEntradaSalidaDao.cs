@@ -18,5 +18,7 @@ namespace DAO
         Task<(List<DEntradaSalida>, string error)> ListaEntradaSalidaXCiudadano(int idCiudadano);
         Task<(List<DEntradaSalidaConsulta>, string error)> ListaEntradaSalidaActuales();
         Task<(bool, string error)> EgresoPuertaPrincipal(int idEntradaSalida, string dataEgreso);
+        Task<(bool, string error)> RegistrarControlIngreso(int idEntradaSalida);
+        Task<(bool, string error)> RegistrarControlEgreso(int idEntradaSalida);
     }
 }

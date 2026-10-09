@@ -341,5 +341,19 @@ namespace DAOImplement
             throw new NotImplementedException();
         }
 
+        public Task<(bool, string error)> ControlIngreso(int idEntradaSalida)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<(bool, string error)> RegistrarControlIngreso(int idEntradaSalida)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<(bool, string error)> RegistrarControlEgreso(int idEntradaSalida)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
