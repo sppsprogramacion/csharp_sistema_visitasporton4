@@ -94,6 +94,7 @@
     <Compile Include="DEntradaSalida.cs" />
     <Compile Include="DEntradaSalidaConsulta.cs" />
     <Compile Include="DEntradaSalidaIngresoPPResponse.cs" />
+    <Compile Include="DEntradaSalidaRegistroControlResponse.cs" />
     <Compile Include="DExcepcionIngresoVisita.cs" />
     <Compile Include="DHuella.cs" />
     <Compile Include="DHuellaCambio.cs" />

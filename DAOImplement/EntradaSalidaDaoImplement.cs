@@ -70,7 +70,8 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
-        // FIN NUEVO INGRESO      
+        // FIN NUEVO INGRESO
+        // -----------------------------------------------------------------------------
 
         //BUSCAR CIUDADANO INGRESO X DNI
         public async Task<(DCiudadanoIngreso, string error)> BuscarCiudadanoIngresoXDni(int dniCiudadano)
@@ -219,63 +220,7 @@ namespace DAOImplement
         //--------------------------------------------------------------------------
 
 
-        //EGRESO PUERTA PRINCIPAL
-        public async Task<(bool, string error)> EgresoPuertaPrincipal(int idEntradaSalida, string dataEgreso)
-        {
-            string token = SessionManager.Token; // Aquí pones tu token real
-
-            try
-            {
-                // Agregar el token en los headers
-                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-                // Crear el contenido de la solicitud HTTP
-                StringContent content = new StringContent(dataEgreso, Encoding.UTF8, "application/json");
-
-                // Enviar la solicitud HTTP POST
-                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/egreso?id_registro=" + idEntradaSalida, content);
-
-                if (httpResponse.IsSuccessStatusCode)
-                {
-                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
-
-                    var dataRespuesta = JsonConvert.DeserializeObject<DResponseEditar>(contentRespuesta);
-
-                    if (dataRespuesta.Affected > 0)
-                    {
-                        return (true, null);
-                    }
-                    else
-                    {
-                        return (false, "No se pudo registrar el egreso del ciudadano");
-                    }
-                }
-                else
-                {
-                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
-                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
-                    return (false, $"Error en el egreso: {mensaje}");
-                }
-            }
-            catch (HttpRequestException httpRequestException)
-            {
-                // Capturar errores de la solicitud HTTP
-                return (false, $"Error de conexión: {httpRequestException.Message}");
-            }
-            catch (JsonException jsonException)
-            {
-                // Capturar errores en la serialización/deserialización de JSON                
-                return (false, $"Error inesperado");
-            }
-            catch (Exception ex)
-            {
-                // Manejo de errores (log, mensaje al usuario, etc.)
-                Console.WriteLine($"Error: {ex.Message}");
-                return (false, $"Error inesperado: {ex.Message}");
-            }
-        }
-        //FIN //EGRESO PUERTA PRINCIPAL
-        //------------------------------------------------------------------------------
+        
 
         public Task<(DEntradaSalida, string error)> BuscarEntradaSalidaXId(int idEntradaSalida)
         {
@@ -342,19 +287,184 @@ namespace DAOImplement
         }
 
 
+        //EGRESO PUERTA PRINCIPAL
+        public async Task<(bool, string error)> EgresoPuertaPrincipal(int idEntradaSalida, string dataEgreso)
+        {
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                // Crear el contenido de la solicitud HTTP
+                StringContent content = new StringContent(dataEgreso, Encoding.UTF8, "application/json");
+
+                // Enviar la solicitud HTTP POST
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/egreso?id_registro=" + idEntradaSalida, content);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+
+                    var dataRespuesta = JsonConvert.DeserializeObject<DResponseEditar>(contentRespuesta);
+
+                    if (dataRespuesta.Affected > 0)
+                    {
+                        return (true, null);
+                    }
+                    else
+                    {
+                        return (false, "No se pudo registrar el egreso del ciudadano");
+                    }
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (false, $"Error en el egreso: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (false, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (false, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (false, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN EGRESO PUERTA PRINCIPAL
+        //------------------------------------------------------------------------------
+
         public Task<(bool, string error)> ControlIngreso(int idEntradaSalida)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(bool, string error)> RegistrarControlIngreso(int idEntradaSalida)
+        //REGISTRAL CONTROL INGRESO PORTON 4
+        public async Task<(DEntradaSalidaRegistroControlResponse, string error)> RegistrarControlIngreso(int idEntradaSalida)
         {
-            throw new NotImplementedException();
-        }
+            string token = SessionManager.Token; // Aquí pones tu token real
 
-        public Task<(bool, string error)> RegistrarControlEgreso(int idEntradaSalida)
-        {
-            throw new NotImplementedException();
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                // Crear el contenido de la solicitud HTTP
+                StringContent content = new StringContent(null, Encoding.UTF8, "application/json");
+
+                // Enviar la solicitud HTTP POST
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/registrar-controlingreso-porton4?id_registro=" + idEntradaSalida, null);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+
+                    var dataRespuesta = JsonConvert.DeserializeObject<DEntradaSalidaRegistroControlResponse>(contentRespuesta);
+
+                    return (dataRespuesta, null);
+
+                    //if (dataRespuesta.Affected > 0)
+                    //{
+                    //}
+                    //else
+                    //{
+                    //    return (false, "No se pudo registrar el egreso del ciudadano");
+                    //}
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en el egreso: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
         }
+        //FIN REGISTRAR CONTROL INGRESO PORTON 4
+
+        //REGISTRAR CONTROL EGRESO PORTON 4
+        public async Task<(DEntradaSalidaRegistroControlResponse, string error)> RegistrarControlEgreso(int idEntradaSalida)
+        {
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                // Crear el contenido de la solicitud HTTP
+                StringContent content = new StringContent(null, Encoding.UTF8, "application/json");
+
+                // Enviar la solicitud HTTP POST
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/registrar-controlegreso-porton4?id_registro=" + idEntradaSalida, null);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+
+                    var dataRespuesta = JsonConvert.DeserializeObject<DEntradaSalidaRegistroControlResponse>(contentRespuesta);
+
+                    return (dataRespuesta, null);
+
+                    //if (dataRespuesta.Affected > 0)
+                    //{
+                    //}
+                    //else
+                    //{
+                    //    return (false, "No se pudo registrar el egreso del ciudadano");
+                    //}
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en el egreso: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN REGISTRAR CONTROL EGRESO PORTON 4
+        //-----------------------------------------------------------------------------------
     }
 }

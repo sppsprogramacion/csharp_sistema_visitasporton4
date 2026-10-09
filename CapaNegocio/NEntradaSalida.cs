@@ -61,17 +61,7 @@ namespace CapaNegocio
         //FIN BUSCAR ENTRADA CONTROL X CIUDADANO
         //------------------------------------------------------------------------------------------
 
-        //EGRESO
-        public async Task<(bool, string error)> EgresoPuertaPrincipal(int idEntradaSalida, string dataegreso)
-        {
-            IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
-
-            (bool egresoResponse, string error) = await entradaSalidaDao.EgresoPuertaPrincipal(idEntradaSalida, dataegreso);
-
-            return (egresoResponse, error);
-        }
-        //FIN EGRESO 
-        //---------------------------------------------------------------------------------
+        
 
         //LISTA ENTRADAS ACTUALES
         public async Task<(List<DEntradaSalidaConsulta>, string error)> ListaEntradaSalidaActuales()
@@ -85,5 +75,42 @@ namespace CapaNegocio
         }
         //FIN //LISTA ENTRADAS ACTUALES
         //...............................-----------------
+
+
+        //EGRESO
+        public async Task<(bool, string error)> EgresoPuertaPrincipal(int idEntradaSalida, string dataegreso)
+        {
+            IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
+
+            (bool egresoResponse, string error) = await entradaSalidaDao.EgresoPuertaPrincipal(idEntradaSalida, dataegreso);
+
+            return (egresoResponse, error);
+        }
+        //FIN EGRESO 
+        //---------------------------------------------------------------------------------
+
+        //REGISTRAR CONTROL INGRESO
+        public async Task<(DEntradaSalidaRegistroControlResponse, string error)> RegistrarControlIngreso(int idEntradaSalida)
+        {
+            IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
+
+            (DEntradaSalidaRegistroControlResponse ingresoResponse, string error) = await entradaSalidaDao.RegistrarControlIngreso(idEntradaSalida);
+
+            return (ingresoResponse, error);
+        }
+        //FIN REGISTRAR CONTROL INGRESO 
+        //---------------------------------------------------------------------------------
+
+        //REGISTRAR CONTROL EGRESO
+        public async Task<(DEntradaSalidaRegistroControlResponse, string error)> RegistrarControlEgreso(int idEntradaSalida)
+        {
+            IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
+
+            (DEntradaSalidaRegistroControlResponse egresoResponse, string error) = await entradaSalidaDao.RegistrarControlEgreso(idEntradaSalida);
+
+            return (egresoResponse, error);
+        }
+        //FIN REGISTRAR CONTROL egreso 
+        //---------------------------------------------------------------------------------
     }
 }
