@@ -341,6 +341,7 @@ namespace DAOImplement
             throw new NotImplementedException();
         }
 
+
         public Task<(bool, string error)> ControlIngreso(int idEntradaSalida)
         {
             throw new NotImplementedException();
