@@ -65,7 +65,7 @@
             this.lblEncabezado.Name = "lblEncabezado";
             this.lblEncabezado.Size = new System.Drawing.Size(903, 29);
             this.lblEncabezado.TabIndex = 76;
-            this.lblEncabezado.Text = "SISTEMA DE VISITAS - CONTROL PORTON N° 4";
+            this.lblEncabezado.Text = "SISTEMA DE VISITAS - CONTROL ACCESO N° 4";
             this.lblEncabezado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCerrarSistema

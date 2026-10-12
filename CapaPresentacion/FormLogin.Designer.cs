@@ -137,7 +137,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(457, 30);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Sistema Control Porton N° 4";
+            this.label4.Text = "Sistema Control ACCESO N° 4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1

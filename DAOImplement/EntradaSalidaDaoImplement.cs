@@ -350,7 +350,7 @@ namespace DAOImplement
             throw new NotImplementedException();
         }
 
-        //REGISTRAL CONTROL INGRESO PORTON 4
+        //REGISTRAL CONTROL INGRESO ACCESO 4
         public async Task<(DEntradaSalidaRegistroControlResponse, string error)> RegistrarControlIngreso(int idEntradaSalida)
         {
             string token = SessionManager.Token; // Aquí pones tu token real
@@ -364,7 +364,7 @@ namespace DAOImplement
                 //StringContent content = new StringContent(null, Encoding.UTF8, "application/json");
 
                 // Enviar la solicitud HTTP POST
-                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/registrar-controlingreso-porton4?id_registro=" + idEntradaSalida, null);
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/registrar-controlingreso-acceso4?id_registro=" + idEntradaSalida, null);
 
                 if (httpResponse.IsSuccessStatusCode)
                 {
@@ -406,9 +406,9 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
-        //FIN REGISTRAR CONTROL INGRESO PORTON 4
+        //FIN REGISTRAR CONTROL INGRESO ACCESO 4
 
-        //REGISTRAR CONTROL EGRESO PORTON 4
+        //REGISTRAR CONTROL EGRESO ACCESO 4
         public async Task<(DEntradaSalidaRegistroControlResponse, string error)> RegistrarControlEgreso(int idEntradaSalida)
         {
             string token = SessionManager.Token; // Aquí pones tu token real
@@ -422,7 +422,7 @@ namespace DAOImplement
                 //StringContent content = new StringContent(null, Encoding.UTF8, "application/json");
 
                 // Enviar la solicitud HTTP POST
-                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/registrar-controlegreso-porton4?id_registro=" + idEntradaSalida, null);
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/registrar-controlegreso-acceso4?id_registro=" + idEntradaSalida, null);
 
                 if (httpResponse.IsSuccessStatusCode)
                 {
@@ -464,7 +464,7 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
-        //FIN REGISTRAR CONTROL EGRESO PORTON 4
+        //FIN REGISTRAR CONTROL EGRESO ACCESO 4
         //-----------------------------------------------------------------------------------
     }
 }

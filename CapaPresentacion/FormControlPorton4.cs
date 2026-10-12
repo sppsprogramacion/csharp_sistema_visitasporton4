@@ -96,7 +96,7 @@ namespace CapaPresentacion
             //VALIDACIONES
             if (string.IsNullOrEmpty(txtIdIngreso.Text))
             {
-                MessageBox.Show("Debe cargar datos del ingreso de un ciudadano para poder dar el ingreso.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe cargar datos del ingreso de un ciudadano para poder dar el egreso.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -113,7 +113,7 @@ namespace CapaPresentacion
             {
 
                 MessageBox.Show("El ingreso se registró correctamente", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtHoraIngreso.Text = respuestaRegistroControl.hora_ingreso_acceso_4;
+                txtHoraEgreso.Text = respuestaRegistroControl.hora_ingreso_acceso_4;
 
                 //this.InicializarContrles();
 
