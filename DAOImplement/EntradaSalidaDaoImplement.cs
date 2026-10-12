@@ -361,7 +361,7 @@ namespace DAOImplement
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 // Crear el contenido de la solicitud HTTP
-                StringContent content = new StringContent(null, Encoding.UTF8, "application/json");
+                //StringContent content = new StringContent(null, Encoding.UTF8, "application/json");
 
                 // Enviar la solicitud HTTP POST
                 HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/registrar-controlingreso-porton4?id_registro=" + idEntradaSalida, null);
@@ -397,7 +397,7 @@ namespace DAOImplement
             catch (JsonException jsonException)
             {
                 // Capturar errores en la serialización/deserialización de JSON                
-                return (null, $"Error inesperado");
+                return (null, $"Error inesperado json");
             }
             catch (Exception ex)
             {
@@ -419,7 +419,7 @@ namespace DAOImplement
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 // Crear el contenido de la solicitud HTTP
-                StringContent content = new StringContent(null, Encoding.UTF8, "application/json");
+                //StringContent content = new StringContent(null, Encoding.UTF8, "application/json");
 
                 // Enviar la solicitud HTTP POST
                 HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/entradas-salidas/registrar-controlegreso-porton4?id_registro=" + idEntradaSalida, null);

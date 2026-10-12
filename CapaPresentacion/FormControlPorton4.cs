@@ -1,6 +1,7 @@
 ﻿using CapaDatos;
 using CapaNegocio;
 using CapaPresentacion.Biometria;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,6 +56,72 @@ namespace CapaPresentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.InicializarContrles();
+        }
+
+        private async void btnIngreso_Click(object sender, EventArgs e)
+        {
+            //VALIDACIONES
+            if (string.IsNullOrEmpty(txtIdIngreso.Text))
+            {
+                MessageBox.Show("Debe cargar datos del ingreso de un ciudadano para poder dar el ingreso.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //FIN VALIDACIONES
+
+
+            NEntradaSalida nEntradaSalida = new NEntradaSalida();
+
+            this.Enabled = false;
+            (DEntradaSalidaRegistroControlResponse respuestaRegistroControl, string errorResponse) = await nEntradaSalida.RegistrarControlIngreso(Convert.ToInt32(txtIdIngreso.Text));
+            this.Enabled = true;
+
+            if (respuestaRegistroControl != null)
+            {
+
+                MessageBox.Show("El ingreso se registró correctamente", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtHoraIngreso.Text = respuestaRegistroControl.hora_ingreso_acceso_4;
+
+                //this.InicializarContrles();
+
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void btnEgreso_Click(object sender, EventArgs e)
+        {
+            //VALIDACIONES
+            if (string.IsNullOrEmpty(txtIdIngreso.Text))
+            {
+                MessageBox.Show("Debe cargar datos del ingreso de un ciudadano para poder dar el ingreso.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //FIN VALIDACIONES
+
+
+            NEntradaSalida nEntradaSalida = new NEntradaSalida();
+
+            this.Enabled = false;
+            (DEntradaSalidaRegistroControlResponse respuestaRegistroControl, string errorResponse) = await nEntradaSalida.RegistrarControlEgreso(Convert.ToInt32(txtIdIngreso.Text));
+            this.Enabled = true;
+
+            if (respuestaRegistroControl != null)
+            {
+
+                MessageBox.Show("El ingreso se registró correctamente", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtHoraIngreso.Text = respuestaRegistroControl.hora_ingreso_acceso_4;
+
+                //this.InicializarContrles();
+
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //CONTROL EDAD
@@ -577,11 +644,7 @@ namespace CapaPresentacion
             accion();
         }
 
-        private void gboxVisita_Enter(object sender, EventArgs e)
-        {
 
-        }
-        
 
         #endregion Metodos para huellas
         //----------------------------------------------------------
