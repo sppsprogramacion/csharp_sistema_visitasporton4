@@ -420,19 +420,12 @@ namespace DAOImplement
 
                     return (dataRespuesta, null);
 
-                    //if (dataRespuesta.Affected > 0)
-                    //{
-                    //}
-                    //else
-                    //{
-                    //    return (false, "No se pudo registrar el egreso del ciudadano");
-                    //}
                 }
                 else
                 {
                     string errorMessage = await httpResponse.Content.ReadAsStringAsync();
                     var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
-                    return (null, $"Error en el egreso: {mensaje}");
+                    return (null, $"Error al registrar: {mensaje}");
                 }
             }
             catch (HttpRequestException httpRequestException)
@@ -478,19 +471,12 @@ namespace DAOImplement
 
                     return (dataRespuesta, null);
 
-                    //if (dataRespuesta.Affected > 0)
-                    //{
-                    //}
-                    //else
-                    //{
-                    //    return (false, "No se pudo registrar el egreso del ciudadano");
-                    //}
                 }
                 else
                 {
                     string errorMessage = await httpResponse.Content.ReadAsStringAsync();
                     var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
-                    return (null, $"Error en el egreso: {mensaje}");
+                    return (null, $"Error al registrar: {mensaje}");
                 }
             }
             catch (HttpRequestException httpRequestException)

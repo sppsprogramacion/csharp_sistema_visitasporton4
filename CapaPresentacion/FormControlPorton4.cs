@@ -313,8 +313,7 @@ namespace CapaPresentacion
                 txtHoraIngreso.Text = dCiudadanoIngresoResponse.hora_registro;
                 txtHoraEgreso.Text = dCiudadanoIngresoResponse.hora_egreso;
 
-
-                this.ControlTieneDiscapacidad(dCiudadanoIngresoResponse.tiene_discapacidad, dCiudadanoIngresoResponse.discapacidad_detalle);
+                this.ControlTieneDiscapacidad(dCiudadanoIngresoResponse.tiene_discapacidad_visita, dCiudadanoIngresoResponse.discapacidad_detalle);
                 this.ControlEdad(dCiudadanoIngresoResponse.edad_visita);
 
                 //Cargar Huellas
@@ -482,8 +481,14 @@ namespace CapaPresentacion
 
                 if (modoIdentificacion)
                 {
-                    //MessageBox.Show("Identificando huella", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //inicoalizar controles
+                    EjecutarEnUI(() =>
+                    {
+                        this.InicializarContrles();
 
+                    });
+
+                    //inicializar base huellas
                     DSQLite sqlite = new DSQLite();
 
                     sqlite.Inicializar();

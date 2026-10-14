@@ -33,8 +33,6 @@
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.btnCerrarSistema = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.btnIngresoVisita = new System.Windows.Forms.Button();
-            this.btnEgresoVisitas = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnControlAcceso = new System.Windows.Forms.Button();
             this.btnVerIngresos = new System.Windows.Forms.Button();
@@ -71,13 +69,12 @@
             this.btnVerVisitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerVisitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerVisitas.ForeColor = System.Drawing.Color.White;
-            this.btnVerVisitas.Location = new System.Drawing.Point(275, 459);
+            this.btnVerVisitas.Location = new System.Drawing.Point(12, 467);
             this.btnVerVisitas.Name = "btnVerVisitas";
             this.btnVerVisitas.Size = new System.Drawing.Size(120, 70);
             this.btnVerVisitas.TabIndex = 0;
             this.btnVerVisitas.Text = "Visitas";
             this.btnVerVisitas.UseVisualStyleBackColor = false;
-            this.btnVerVisitas.Click += new System.EventHandler(this.btnVerVisitas_Click);
             // 
             // lblEncabezado
             // 
@@ -117,36 +114,6 @@
             this.lblUsuario.TabIndex = 78;
             this.lblUsuario.Text = "label1";
             // 
-            // btnIngresoVisita
-            // 
-            this.btnIngresoVisita.BackColor = System.Drawing.Color.Indigo;
-            this.btnIngresoVisita.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
-            this.btnIngresoVisita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresoVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresoVisita.ForeColor = System.Drawing.Color.White;
-            this.btnIngresoVisita.Location = new System.Drawing.Point(23, 459);
-            this.btnIngresoVisita.Name = "btnIngresoVisita";
-            this.btnIngresoVisita.Size = new System.Drawing.Size(120, 70);
-            this.btnIngresoVisita.TabIndex = 80;
-            this.btnIngresoVisita.Text = "Ingreso de visitas";
-            this.btnIngresoVisita.UseVisualStyleBackColor = false;
-            this.btnIngresoVisita.Click += new System.EventHandler(this.btnIngresoVisita_Click);
-            // 
-            // btnEgresoVisitas
-            // 
-            this.btnEgresoVisitas.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnEgresoVisitas.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnEgresoVisitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEgresoVisitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEgresoVisitas.ForeColor = System.Drawing.Color.White;
-            this.btnEgresoVisitas.Location = new System.Drawing.Point(149, 459);
-            this.btnEgresoVisitas.Name = "btnEgresoVisitas";
-            this.btnEgresoVisitas.Size = new System.Drawing.Size(120, 70);
-            this.btnEgresoVisitas.TabIndex = 81;
-            this.btnEgresoVisitas.Text = "Egreso de visitas";
-            this.btnEgresoVisitas.UseVisualStyleBackColor = false;
-            this.btnEgresoVisitas.Click += new System.EventHandler(this.btnEgresoVisitas_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.usuario;
@@ -168,7 +135,7 @@
             this.btnControlAcceso.Name = "btnControlAcceso";
             this.btnControlAcceso.Size = new System.Drawing.Size(120, 70);
             this.btnControlAcceso.TabIndex = 83;
-            this.btnControlAcceso.Text = "Control Porton N° 4";
+            this.btnControlAcceso.Text = "Control Acceso N° 4";
             this.btnControlAcceso.UseVisualStyleBackColor = false;
             this.btnControlAcceso.Click += new System.EventHandler(this.btnControlAcceso_Click);
             // 
@@ -526,8 +493,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVerIngresos);
             this.Controls.Add(this.btnControlAcceso);
-            this.Controls.Add(this.btnEgresoVisitas);
-            this.Controls.Add(this.btnIngresoVisita);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCerrarSistema);
@@ -552,8 +517,6 @@
         private System.Windows.Forms.Button btnCerrarSistema;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Button btnIngresoVisita;
-        private System.Windows.Forms.Button btnEgresoVisitas;
         private System.Windows.Forms.Button btnControlAcceso;
         private System.Windows.Forms.Button btnVerIngresos;
         private System.Windows.Forms.Label label1;

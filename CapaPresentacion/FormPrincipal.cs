@@ -63,32 +63,14 @@ namespace CapaPresentacion
         }
 
 
-        private void btnVerVisitas_Click(object sender, EventArgs e)
-        {
-            FormVisitas formVisitas = new FormVisitas();
-
-            formVisitas.ShowDialog();
-        }
+        
 
         private void btnCerrarSistema_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnProhibicionesAnticipadas_Click(object sender, EventArgs e)
-        {
-            FormProhibicionesAnticipadas formProhibicionesAnticipadas = new FormProhibicionesAnticipadas();
-
-            formProhibicionesAnticipadas.ShowDialog();
-        }
-
         
-        private void btnExcepcionesIngreso_Click(object sender, EventArgs e)
-        {
-            FormExcepcionesIngreso formExepcionesIngreso = new FormExcepcionesIngreso();
-
-            formExepcionesIngreso.ShowDialog();
-        }
 
         private void btnIngresoVisita_Click(object sender, EventArgs e)
         {
