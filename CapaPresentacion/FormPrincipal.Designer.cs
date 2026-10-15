@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.btnVerVisitas = new System.Windows.Forms.Button();
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.btnCerrarSistema = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -58,23 +57,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.btnActualizarComputo = new System.Windows.Forms.Button();
-            this.btnImprimirComputo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnVerVisitas
-            // 
-            this.btnVerVisitas.BackColor = System.Drawing.Color.Indigo;
-            this.btnVerVisitas.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
-            this.btnVerVisitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerVisitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerVisitas.ForeColor = System.Drawing.Color.White;
-            this.btnVerVisitas.Location = new System.Drawing.Point(12, 467);
-            this.btnVerVisitas.Name = "btnVerVisitas";
-            this.btnVerVisitas.Size = new System.Drawing.Size(120, 70);
-            this.btnVerVisitas.TabIndex = 0;
-            this.btnVerVisitas.Text = "Visitas";
-            this.btnVerVisitas.UseVisualStyleBackColor = false;
             // 
             // lblEncabezado
             // 
@@ -439,7 +423,7 @@
             this.btnActualizarComputo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarComputo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarComputo.ForeColor = System.Drawing.Color.White;
-            this.btnActualizarComputo.Location = new System.Drawing.Point(502, 282);
+            this.btnActualizarComputo.Location = new System.Drawing.Point(709, 284);
             this.btnActualizarComputo.Name = "btnActualizarComputo";
             this.btnActualizarComputo.Size = new System.Drawing.Size(194, 40);
             this.btnActualizarComputo.TabIndex = 106;
@@ -447,28 +431,12 @@
             this.btnActualizarComputo.UseVisualStyleBackColor = false;
             this.btnActualizarComputo.Click += new System.EventHandler(this.btnActualizarComputo_Click);
             // 
-            // btnImprimirComputo
-            // 
-            this.btnImprimirComputo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnImprimirComputo.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnImprimirComputo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirComputo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirComputo.ForeColor = System.Drawing.Color.White;
-            this.btnImprimirComputo.Location = new System.Drawing.Point(710, 282);
-            this.btnImprimirComputo.Name = "btnImprimirComputo";
-            this.btnImprimirComputo.Size = new System.Drawing.Size(194, 40);
-            this.btnImprimirComputo.TabIndex = 107;
-            this.btnImprimirComputo.Text = "Imprimir computo";
-            this.btnImprimirComputo.UseVisualStyleBackColor = false;
-            this.btnImprimirComputo.Click += new System.EventHandler(this.btnImprimirComputo_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(916, 606);
-            this.Controls.Add(this.btnImprimirComputo);
             this.Controls.Add(this.btnActualizarComputo);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -497,12 +465,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCerrarSistema);
             this.Controls.Add(this.lblEncabezado);
-            this.Controls.Add(this.btnVerVisitas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NO BINARIO";
+            this.Text = "CONTROL ACCESO 4";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -511,8 +478,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnVerVisitas;
         private System.Windows.Forms.Label lblEncabezado;
         private System.Windows.Forms.Button btnCerrarSistema;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -541,7 +506,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnActualizarComputo;
-        private System.Windows.Forms.Button btnImprimirComputo;
     }
 }
 

@@ -63,8 +63,6 @@ namespace CapaPresentacion
         }
 
 
-        
-
         private void btnCerrarSistema_Click(object sender, EventArgs e)
         {
             Application.Exit();
