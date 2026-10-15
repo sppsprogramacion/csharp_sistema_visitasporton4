@@ -492,37 +492,51 @@ namespace CapaPresentacion
                     DSQLite sqlite = new DSQLite();
 
                     sqlite.Inicializar();
-                    //MessageBox.Show("Inicializado", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
                     //SINCRONIZACION
-                    NHuella nHuella = new NHuella();
+                    //NHuella nHuella = new NHuella();
 
-                    EjecutarEnUI(() =>
+                    //EjecutarEnUI(() =>
+                    //{
+                    //    this.Enabled = false;
+
+                    //});
+
+                    //(bool estadoResponse, string errorResponse) = await nHuella.Sincronizar();
+                    //EjecutarEnUI(() =>
+                    //{
+                    //    this.Enabled = true;
+
+                    //});
+
+                    //if (estadoResponse == false)
+                    //{
+                    //    MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //    return;
+                    //}
+                    //FIN SINCRONIZACION 
+
+                    //BUSCAR LISTA DE ENTRADAS SALIDAS
+                    NEntradaSalida nEntradaSalida = new NEntradaSalida();
+                    (List<DEntradaSalidaMinimizado> listaEntradaSalidaResponse, string errorResponse) = await nEntradaSalida.ListaEntradaSalidaActualesMinimizado();
+
+                    if (listaEntradaSalidaResponse == null)
                     {
-                        this.Enabled = false;
-
-                    });
-                    //MessageBox.Show("inicia sincronizacion", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    (bool estadoResponse, string errorResponse) = await nHuella.Sincronizar();
-                    EjecutarEnUI(() =>
-                    {
-                        this.Enabled = true;
-
-                    });
-
-                    //MessageBox.Show("sincronizado", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    if (estadoResponse == false)
-                    {
-                        MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
 
+                    
+                    //GENERAR LISTA DE IDS SOLAMENTE
+                    List<int> listaIdsEntrada = listaEntradaSalidaResponse
+                        .Select(x => x.ciudadano_id)
+                        .Distinct()
+                        .ToList();
 
-                    //FIN SINCRONIZACION 
-
-                    List<DHuellaLocal> listaHuellas = sqlite.ObtenerTodasLasHuellas();
+                    
+                    //LISTA DE HUELLAS DE LA BASE LOCAL. SOLAMENTE CON LOS IDS DE ENTRADA SALIDA DEL DIA
+                    List<DHuellaLocal> listaHuellas = sqlite.ObtenerHuellasDeVisitantesActuales(listaIdsEntrada);
 
                     if (listaHuellas.Count == 0)
                     {
@@ -530,26 +544,25 @@ namespace CapaPresentacion
 
                         return;
                     }
+                                       
 
-                    //MessageBox.Show("Ya tengo las huellas de sqlite", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
 
                     foreach (DHuellaLocal huella in listaHuellas)
                     {
+                        
                         try
                         {
-
-                            //byte[] templateBytes = Convert.FromBase64String(huella.huella);
-
-                            //DPFP.Template template = fingerprintTemplate.LoadTemplate(templateBytes);
-                            DPFP.Template template = fingerprintTemplate.LoadTemplate(huella.huella);
-
-                            if (fingerprintVerifier.Verify(featureSet, template))
+                            if (huella != null)
                             {
-                                //MessageBox.Show($"COINCIDENCIA ENCONCTRADA CON ESTA HUELLA", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                this.CargarEntrada(huella.ciudadano_id);
-                                //FormHuellasEncontrado formHuellasEncontrado = new FormHuellasEncontrado(huella.ciudadano_id);
-                                //formHuellasEncontrado.ShowDialog();
-                                return;
+                                DPFP.Template template = fingerprintTemplate.LoadTemplate(huella.huella);
+
+                                if (fingerprintVerifier.Verify(featureSet, template))
+                                {
+                                    this.CargarEntrada(huella.ciudadano_id);
+
+                                    return;
+                                }
                             }
                         }
                         catch (Exception ex)

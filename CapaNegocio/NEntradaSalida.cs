@@ -76,6 +76,20 @@ namespace CapaNegocio
         //FIN //LISTA ENTRADAS ACTUALES
         //...............................-----------------
 
+        //LISTA ENTRADAS ACTUALES
+        public async Task<(List<DEntradaSalidaMinimizado>, string error)> ListaEntradaSalidaActualesMinimizado()
+        {
+            IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
+
+            (List<DEntradaSalidaMinimizado> listaEntradas, string errorResponse) = await entradaSalidaDao.ListaEntradaSalidaActualesMinimizado();
+
+
+            return (listaEntradas, errorResponse);
+        }
+        //FIN //LISTA ENTRADAS ACTUALES
+        //...............................-----------------
+
+
         //COMPUTO POR ORGANISMO
         public async Task<(List<DEntradaSalidaComputo>, string error)> ListaComputoXOrganismo()
         {

@@ -275,6 +275,54 @@ namespace DAOImplement
         //FIN LISTA DE INGRESOS ACTUALES
         //---------------------------------------------------------------
 
+        //LISTA DE INGRESOS ACTUALES MINIMIZADO
+        public async Task<(List<DEntradaSalidaMinimizado>, string error)> ListaEntradaSalidaActualesMinimizado()
+        {
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            List<DEntradaSalidaMinimizado> listaEntradas = new List<DEntradaSalidaMinimizado>();
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/entradas-salidas/lista-ingresos-actuales-minimizado");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    listaEntradas = JsonConvert.DeserializeObject<List<DEntradaSalidaMinimizado>>(content);
+                    return (listaEntradas, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN LISTA DE INGRESOS ACTUALES MINIMIZADO
+        //--------------------------------------------------------------------------------------
+
         //COMPUTO POR ORGANISMO
         public async Task<(List<DEntradaSalidaComputo>, string error)> ComputoXOrganismo()
         {
@@ -321,6 +369,8 @@ namespace DAOImplement
         }
         //FIN COMPUTO POR ORGANISMO
         //------------------------------------------------------------------------
+              
+
 
         public Task<(List<DEntradaSalida>, string error)> ListaEntradaSalidaXCiudadano(int idCiudadano)
         {
@@ -496,7 +546,7 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
-
+                
         //FIN REGISTRAR CONTROL EGRESO ACCESO 4
         //-----------------------------------------------------------------------------------
     }

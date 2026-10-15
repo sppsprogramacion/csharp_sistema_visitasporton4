@@ -18,6 +18,7 @@ namespace DAO
         Task<(List<DEntradaSalidaComputo>, string error)> ComputoXOrganismo();
         Task<(List<DEntradaSalida>, string error)> ListaEntradaSalidaXCiudadano(int idCiudadano);
         Task<(List<DEntradaSalidaConsulta>, string error)> ListaEntradaSalidaActuales();
+        Task<(List<DEntradaSalidaMinimizado>, string error)> ListaEntradaSalidaActualesMinimizado();
         Task<(bool, string error)> EgresoPuertaPrincipal(int idEntradaSalida, string dataEgreso);
         Task<(DEntradaSalidaRegistroControlResponse, string error)> RegistrarControlIngreso(int idEntradaSalida);
         Task<(DEntradaSalidaRegistroControlResponse, string error)> RegistrarControlEgreso(int idEntradaSalida);

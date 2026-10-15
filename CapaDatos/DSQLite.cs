@@ -172,6 +172,68 @@ namespace CapaDatos
         //FIN LISTA DE TODAS LAS HUELLAS
         //--------------------------------------------------------------------
 
+        //LISTA DE LAS HUELLAS DE VISITANTES ACTUALES
+        public List<DHuellaLocal> ObtenerHuellasDeVisitantesActuales(List<int> listaIdsCiudadanos)
+        {
+            List<DHuellaLocal> lista = new List<DHuellaLocal>();
+
+            // Si no hay ciudadanos, devolver lista vacía
+            if (listaIdsCiudadanos == null || listaIdsCiudadanos.Count == 0)
+            {
+                return lista;
+            }
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
+            {
+                conexion.Open();
+
+                // Generar parámetros @id0, @id1, @id2...
+                string parametros = string.Join(",",listaIdsCiudadanos.Select((id, index) => $"@id{index}"));
+
+                string sql = $@"
+                    SELECT id_huella_ciudadano, ciudadano_id, dedo_id, huella
+                    FROM huellas
+                    WHERE ciudadano_id IN ({parametros})
+                    ORDER BY id_huella_ciudadano ASC;";
+
+                using (SQLiteCommand comando = new SQLiteCommand(sql, conexion))
+                {
+                    // ASIGNAR LOS VALORES A LOS PARÁMETROS
+                    for (int i = 0; i < listaIdsCiudadanos.Count; i++)
+                    {
+                        comando.Parameters.AddWithValue(
+                            $"@id{i}",
+                            listaIdsCiudadanos[i]
+                        );
+                    }
+
+                    using (SQLiteDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DHuellaLocal huella = new DHuellaLocal();
+
+                            huella.id_huella_ciudadano = Convert.ToInt32(reader["id_huella_ciudadano"]);
+
+                            huella.ciudadano_id = Convert.ToInt32(reader["ciudadano_id"]);
+
+                            huella.dedo_id = Convert.ToInt32(reader["dedo_id"]);
+
+                            huella.huella = (byte[])reader["huella"];
+
+                            lista.Add(huella);
+                        }
+                    }
+                }
+            }
+
+            return lista;
+        }
+        //FIN LISTA DE TODAS LAS HUELLAS
+        //--------------------------------------------------------------------
+
+
+
         //LIMPIAR HUELLAS
         public void LimpiarHuellas()
         {

@@ -65,7 +65,7 @@
             this.lblEncabezado.BackColor = System.Drawing.Color.Black;
             this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.ForeColor = System.Drawing.Color.Cyan;
-            this.lblEncabezado.Location = new System.Drawing.Point(1, 5);
+            this.lblEncabezado.Location = new System.Drawing.Point(12, 9);
             this.lblEncabezado.Name = "lblEncabezado";
             this.lblEncabezado.Size = new System.Drawing.Size(903, 29);
             this.lblEncabezado.TabIndex = 76;
