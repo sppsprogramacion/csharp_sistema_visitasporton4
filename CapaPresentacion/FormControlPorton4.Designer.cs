@@ -117,8 +117,8 @@
             // 
             // btnEgreso
             // 
-            this.btnEgreso.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnEgreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnEgreso.BackColor = System.Drawing.Color.Indigo;
+            this.btnEgreso.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnEgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEgreso.ForeColor = System.Drawing.Color.White;
@@ -315,11 +315,11 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Black;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
             this.btnCancelar.FlatAppearance.BorderSize = 2;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Cyan;
+            this.btnCancelar.ForeColor = System.Drawing.Color.Orange;
             this.btnCancelar.Location = new System.Drawing.Point(895, 591);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(231, 40);

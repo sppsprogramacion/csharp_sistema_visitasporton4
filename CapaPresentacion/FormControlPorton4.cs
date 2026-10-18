@@ -536,19 +536,16 @@ namespace CapaPresentacion
 
                     
                     //LISTA DE HUELLAS DE LA BASE LOCAL. SOLAMENTE CON LOS IDS DE ENTRADA SALIDA DEL DIA
-                    List<DHuellaLocal> listaHuellas = sqlite.ObtenerHuellasDeVisitantesActuales(listaIdsEntrada);
+                    List<DHuellaLocal> listaHuellasVisitantes = sqlite.ObtenerHuellasDeVisitantesActuales(listaIdsEntrada);
 
-                    if (listaHuellas.Count == 0)
+                    if (listaHuellasVisitantes.Count == 0)
                     {
                         MessageBox.Show("No hay huellas registradas.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                         return;
                     }
                                        
-
-                    
-
-                    foreach (DHuellaLocal huella in listaHuellas)
+                    foreach (DHuellaLocal huella in listaHuellasVisitantes)
                     {
                         
                         try
@@ -560,6 +557,45 @@ namespace CapaPresentacion
                                 if (fingerprintVerifier.Verify(featureSet, template))
                                 {
                                     this.CargarEntrada(huella.ciudadano_id);
+
+                                    return;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // registrar error si quieres
+                            continue;
+                        }
+                    }
+
+
+                    //CUANDO NO ENCUENTRA EN LA LISTA DE HUELLAS DE INGRESOS DEL DIA
+                    //BUSCA EN TODAS LAS HUELLAS
+
+                    //LISTA DE TODAS LAS HUELLAS DE LA BASE LOCAL. SOLAMENTE CON LOS IDS DE ENTRADA SALIDA DEL DIA
+                    List<DHuellaLocal> listaHuellasTodas = sqlite.ObtenerTodasLasHuellas();
+
+                    if (listaHuellasTodas.Count == 0)
+                    {
+                        MessageBox.Show("No hay huellas registradas.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        return;
+                    }
+
+                    foreach (DHuellaLocal huella in listaHuellasTodas)
+                    {
+
+                        try
+                        {
+                            if (huella != null)
+                            {
+                                DPFP.Template template = fingerprintTemplate.LoadTemplate(huella.huella);
+
+                                if (fingerprintVerifier.Verify(featureSet, template))
+                                {
+                                    FormHuellasEncontrado formhuellasencontrado = new FormHuellasEncontrado(huella.ciudadano_id);
+                                    formhuellasencontrado.ShowDialog();
 
                                     return;
                                 }
