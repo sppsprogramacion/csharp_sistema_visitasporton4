@@ -112,7 +112,7 @@ namespace CapaPresentacion
             if (respuestaRegistroControl != null)
             {
 
-                MessageBox.Show("El ingreso se registró correctamente", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El egreso se registró correctamente", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtHoraEgreso.Text = respuestaRegistroControl.hora_ingreso_acceso_4;
 
                 //this.InicializarContrles();
@@ -493,30 +493,6 @@ namespace CapaPresentacion
 
                     sqlite.Inicializar();
 
-
-                    //SINCRONIZACION
-                    //NHuella nHuella = new NHuella();
-
-                    //EjecutarEnUI(() =>
-                    //{
-                    //    this.Enabled = false;
-
-                    //});
-
-                    //(bool estadoResponse, string errorResponse) = await nHuella.Sincronizar();
-                    //EjecutarEnUI(() =>
-                    //{
-                    //    this.Enabled = true;
-
-                    //});
-
-                    //if (estadoResponse == false)
-                    //{
-                    //    MessageBox.Show(errorResponse, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //    return;
-                    //}
-                    //FIN SINCRONIZACION 
-
                     //BUSCAR LISTA DE ENTRADAS SALIDAS
                     NEntradaSalida nEntradaSalida = new NEntradaSalida();
                     (List<DEntradaSalidaMinimizado> listaEntradaSalidaResponse, string errorResponse) = await nEntradaSalida.ListaEntradaSalidaActualesMinimizado();
@@ -527,46 +503,89 @@ namespace CapaPresentacion
                         return;
                     }
 
-                    
+
                     //GENERAR LISTA DE IDS SOLAMENTE
                     List<int> listaIdsEntrada = listaEntradaSalidaResponse
                         .Select(x => x.ciudadano_id)
                         .Distinct()
                         .ToList();
 
-                    
-                    //LISTA DE HUELLAS DE LA BASE LOCAL. SOLAMENTE CON LOS IDS DE ENTRADA SALIDA DEL DIA
-                    List<DHuellaLocal> listaHuellasVisitantes = sqlite.ObtenerHuellasDeVisitantesActuales(listaIdsEntrada);
-
-                    if (listaHuellasVisitantes.Count == 0)
+                    if (listaIdsEntrada.Count == 0)
                     {
-                        MessageBox.Show("No hay huellas registradas.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("No hay ingresos de visitantes en el dia de la fecha.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                         return;
                     }
-                                       
-                    foreach (DHuellaLocal huella in listaHuellasVisitantes)
+
+                    //REPETIR DOS VECES LA BUSQUEDAEN LISTA DE IDS DE ENTRADA, LA SEGUNDA ES PARA SINCRONIZAR
+                    int cantidadVeces = 1;
+                    while (cantidadVeces <= 2)
                     {
-                        
-                        try
+                        //LISTA DE HUELLAS DE LA BASE LOCAL. SOLAMENTE CON LOS IDS DE ENTRADA SALIDA DEL DIA
+                        List<DHuellaLocal> listaHuellasVisitantes = sqlite.ObtenerHuellasDeVisitantesActuales(listaIdsEntrada);
+
+                        if (listaHuellasVisitantes.Count == 0)
                         {
-                            if (huella != null)
+                            MessageBox.Show("No se encontraron huellas de los visitantes que ingresaron.", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            return;
+                        }
+
+                        foreach (DHuellaLocal huella in listaHuellasVisitantes)
+                        {
+
+                            try
                             {
-                                DPFP.Template template = fingerprintTemplate.LoadTemplate(huella.huella);
-
-                                if (fingerprintVerifier.Verify(featureSet, template))
+                                if (huella != null)
                                 {
-                                    this.CargarEntrada(huella.ciudadano_id);
+                                    DPFP.Template template = fingerprintTemplate.LoadTemplate(huella.huella);
 
-                                    return;
+                                    if (fingerprintVerifier.Verify(featureSet, template))
+                                    {
+                                        this.CargarEntrada(huella.ciudadano_id);
+
+                                        return;
+                                    }
                                 }
                             }
+                            catch (Exception ex)
+                            {
+                                // registrar error si quieres
+                                continue;
+                            }
                         }
-                        catch (Exception ex)
+
+                        //LA ACTUALIZACION SE REALIZA UNA SOLA VEZ.
+                        //PARA QUE SE CONTROLE UNA VEZ MAS LAS GUELLAS D ELOS QUE INGRESARON EN EL DIA
+                        if (cantidadVeces == 1)
                         {
-                            // registrar error si quieres
-                            continue;
+                            //SINCRONIZACION
+                            NHuella nHuella = new NHuella();
+
+                            EjecutarEnUI(() =>
+                            {
+                                this.Enabled = false;
+
+                            });
+
+                            (bool estadoResponse, string errorResponseHuella) = await nHuella.Sincronizar();
+
+                            EjecutarEnUI(() =>
+                            {
+                                this.Enabled = true;
+
+                            });
+
+                            if (estadoResponse == false)
+                            {
+                                MessageBox.Show(errorResponseHuella, "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            //FIN SINCRONIZACION 
                         }
+
+                        //SUMAR EN 1, PARA LUEGO CONTROLAR LA CANTIDAD DE VECES QUE SE HIZO ESTE PROCEIMIENTO
+                        cantidadVeces = cantidadVeces + 1;
                     }
 
 
