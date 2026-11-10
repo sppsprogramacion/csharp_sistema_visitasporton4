@@ -627,8 +627,7 @@ namespace CapaPresentacion
                         }
                     }
 
-                    //MessageBox.Show("NO SE ENCONTRO COINCIDENCIA DE ESTA HUELLA", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //Cuando no se enocntro la huella
+                    //CUANDO NO SE ENCONTRO LA HUELLA
                     EjecutarEnUI(() =>
                     {
                         FormHuellaNoEncontrada formHuellaNoEncontrado = new FormHuellaNoEncontrada();
