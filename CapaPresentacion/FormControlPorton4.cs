@@ -113,7 +113,7 @@ namespace CapaPresentacion
             {
 
                 MessageBox.Show("El egreso se registró correctamente", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtHoraEgreso.Text = respuestaRegistroControl.hora_ingreso_acceso_4;
+                txtHoraEgreso.Text = respuestaRegistroControl.hora_egreso_acceso_4;
 
                 //this.InicializarContrles();
 
