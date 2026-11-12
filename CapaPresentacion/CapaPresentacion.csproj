@@ -9,7 +9,7 @@
     <ProjectGuid>{64276D16-A0A2-4598-8A51-47D42A75451F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CapaPresentacion</RootNamespace>
-    <AssemblyName>SistemaVisitas</AssemblyName>
+    <AssemblyName>SistemaAcceso4</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -17,7 +17,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>D:\Programar\C-Sharp\Proyectos\SPPS\01-Instaladores\RestriccionVisita\RestriccionVisita_20260210_1151\</PublishUrl>
+    <PublishUrl>G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\03-instaladores\Aplicaciones de prueba\Visitas\Porrton4\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
